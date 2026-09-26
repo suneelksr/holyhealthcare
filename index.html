@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071A33">
+<title>Holy Health — Multi-Specialty Hospital | Sacramento, CA</title>
+<meta name="description" content="Holy Health Multi-Specialty Hospital in Sacramento, California. OPD, IPD, 24x7 Emergency, Ambulance, Doctors, Insurance — five-star hospital care.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230B2545'/%3E%3Crect x='42' y='24' width='16' height='52' rx='3' fill='%23C9A227'/%3E%3Crect x='24' y='42' width='52' height='16' rx='3' fill='%23C9A227'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* ============================= TOKENS ============================= */
+:root{
+  --navy:#0B2545;
+  --navy-light:#13315C;
+  --navy-deep:#071A33;
+  --gold:#C9A227;
+  --gold-light:#E8D9A0;
+  --cream:#FAF7F0;
+  --ink:#1B1F27;
+  --slate:#5B6B85;
+  --white:#FFFFFF;
+  --hairline:#E4E1D6;
+  --green:#1E7A46;
+  --red:#B3261E;
+
+  --display: 'Fraunces', serif;
+  --body: 'Public Sans', -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+
+  --maxw: 1180px;
+  --radius: 14px;
+  --shadow: 0 20px 50px -20px rgba(11,37,69,0.25);
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--cream);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block; max-width:100%;}
+a{color:inherit; text-decoration:none;}
+ul{list-style:none;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+section{position:relative;}
+::selection{background:var(--gold-light); color:var(--navy-deep);}
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:11.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:500;
+  display:flex; align-items:center; gap:10px;
+}
+.eyebrow::before{content:""; width:22px; height:1px; background:var(--gold);}
+
+h1,h2,h3,h4{font-family:var(--display); font-weight:600; color:var(--navy); line-height:1.08;}
+p{line-height:1.65; color:var(--slate);}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  font-family:var(--body); font-weight:700; font-size:14.5px;
+  padding:14px 26px; border-radius:999px; border:1.5px solid transparent;
+  cursor:pointer; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  white-space:nowrap;
+}
+.btn-gold{background:var(--gold); color:var(--navy-deep);}
+.btn-gold:hover{transform:translateY(-2px); box-shadow:0 14px 26px -10px rgba(201,162,39,0.55);}
+.btn-outline{border-color:rgba(255,255,255,0.4); color:var(--white);}
+.btn-outline:hover{background:rgba(255,255,255,0.12); transform:translateY(-2px);}
+.btn-navy{background:var(--navy); color:var(--white);}
+.btn-navy:hover{background:var(--navy-light); transform:translateY(-2px);}
+.btn-ghost{border-color:var(--hairline); color:var(--navy); background:transparent;}
+.btn-ghost:hover{border-color:var(--gold); color:var(--navy);}
+
+/* ============================= REVEAL ============================= */
+.reveal{opacity:1; transform:none;}
+.reveal-ready .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+.reveal-ready .reveal.in{opacity:1; transform:translateY(0);}
+
+/* ============================= HEADER ============================= */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:500;
+  background:rgba(11,37,69,0.0);
+  transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+  padding:22px 0;
+}
+header.scrolled{background:rgba(7,26,51,0.92); backdrop-filter:blur(10px); box-shadow:0 8px 30px -12px rgba(0,0,0,.35); padding:13px 0;}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:20px;}
+.brand{display:flex; align-items:center; gap:11px; color:var(--white);}
+.brand .mark{width:34px; height:34px; flex:none;}
+.brand-text{font-family:var(--display); font-weight:600; font-size:19px; letter-spacing:.01em;}
+.brand-text small{display:block; font-family:var(--mono); font-size:9px; letter-spacing:.16em; color:var(--gold-light); font-weight:500; margin-top:1px;}
+.navlinks{display:flex; align-items:center; gap:30px;}
+.navlinks a{font-size:13.5px; font-weight:600; color:rgba(255,255,255,0.82); position:relative; padding:4px 0;}
+.navlinks a::after{content:""; position:absolute; left:0; bottom:-2px; width:0; height:1.5px; background:var(--gold); transition:width .25s ease;}
+.navlinks a:hover{color:var(--white);} .navlinks a:hover::after{width:100%;}
+.nav-cta{display:flex; align-items:center; gap:14px;}
+.nav-phone{display:flex; align-items:center; gap:8px; color:var(--gold-light); font-size:13px; font-weight:600; font-family:var(--mono);}
+.hamburger{display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding:6px;}
+.hamburger span{width:22px; height:2px; background:var(--white); border-radius:2px;}
+.nav-scrim{display:none; position:fixed; inset:0; border:0; background:rgba(3,14,29,.58); backdrop-filter:blur(2px);}
+
+/* ============================= HERO ============================= */
+.hero{
+  min-height:100vh;
+  background:radial-gradient(120% 90% at 15% 0%, #123A6B 0%, var(--navy) 46%, var(--navy-deep) 100%);
+  padding:150px 0 90px;
+  overflow:hidden;
+  color:var(--white);
+}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:center;}
+.hero h1{
+  font-size:clamp(38px, 5.2vw, 66px);
+  color:var(--white);
+  margin:20px 0 22px;
+  letter-spacing:-0.01em;
+}
+.hero h1 em{font-style:italic; color:var(--gold-light);}
+.hero p.lead{color:rgba(255,255,255,0.72); font-size:17px; max-width:480px; margin-bottom:34px;}
+.hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:56px;}
+.hero-note{display:flex; gap:22px; flex-wrap:wrap;}
+.hero-note div{font-size:12.5px; color:rgba(255,255,255,0.55); font-family:var(--mono);}
+.hero-note b{color:var(--gold-light); display:block; font-family:var(--display); font-size:22px; font-weight:600;}
+
+.pulse-wrap{position:relative; height:420px;}
+.pulse-card{
+  position:absolute; inset:0;
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:22px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+  overflow:hidden;
+}
+.pulse-card svg{position:absolute; inset:0; width:100%; height:100%;}
+.pulse-line{fill:none; stroke:var(--gold); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray:1400; stroke-dashoffset:1400; animation:draw 3.2s ease-out forwards .4s, glow 2.6s ease-in-out infinite 3.6s;}
+@keyframes draw{to{stroke-dashoffset:0;}}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 0px rgba(201,162,39,.0));} 50%{filter:drop-shadow(0 0 8px rgba(201,162,39,.55));}}
+.pulse-caption{position:absolute; left:24px; bottom:22px; font-family:var(--mono); font-size:11px; color:rgba(255,255,255,0.5); letter-spacing:.08em;}
+.pulse-caption b{color:var(--gold-light);}
+.pulse-dot{position:absolute; width:9px; height:9px; border-radius:50%; background:var(--gold); top:24px; right:24px; box-shadow:0 0 0 0 rgba(201,162,39,.6); animation:ping 2s ease-out infinite;}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(201,162,39,.55);} 70%{box-shadow:0 0 0 12px rgba(201,162,39,0);} 100%{box-shadow:0 0 0 0 rgba(201,162,39,0);}}
+
+/* quick access strip */
+.quick{margin-top:-64px; position:relative; z-index:10;}
+.quick-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+.quick-card{
+  background:var(--white); border-radius:16px; padding:26px 22px;
+  box-shadow:var(--shadow); border:1px solid rgba(11,37,69,0.05);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.quick-card:hover{transform:translateY(-6px); box-shadow:0 26px 50px -18px rgba(11,37,69,.28);}
+.quick-card .qicon{width:38px; height:38px; margin-bottom:16px;}
+.quick-card h4{font-size:16.5px; margin-bottom:8px;}
+.quick-card p{font-size:13.3px; margin-bottom:14px;}
+.quick-card a.link{font-size:12.5px; font-weight:700; color:var(--navy); display:inline-flex; align-items:center; gap:6px;}
+.quick-card a.link:hover{color:var(--gold);}
+.quick-card.emergency{background:var(--navy);}
+.quick-card.emergency h4, .quick-card.emergency p{color:var(--white);}
+.quick-card.emergency p{color:rgba(255,255,255,.65);}
+.quick-card.emergency a.link{color:var(--gold-light);}
+
+/* ============================= SECTION HEAD ============================= */
+.sectionhead{max-width:640px; margin-bottom:52px;}
+.sectionhead h2{font-size:clamp(28px,3.4vw,42px); margin-top:14px;}
+.sectionhead p{margin-top:14px; font-size:15.5px;}
+.pad{padding:120px 0;}
+.pad-top-only{padding-top:120px;}
+
+/* ============================= STATS BAND ============================= */
+.stats{background:var(--navy); color:var(--white); padding:64px 0;}
+.stats-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; text-align:center;}
+.stats-grid div b{display:block; font-family:var(--display); font-size:clamp(26px,3vw,40px); color:var(--gold-light); font-weight:600;}
+.stats-grid div span{font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:rgba(255,255,255,0.6); text-transform:uppercase;}
+
+/* ============================= SERVICES ============================= */
+.services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+.service-card{
+  background:var(--white); border:1px solid var(--hairline); border-radius:var(--radius);
+  padding:32px 28px; transition:border-color .25s ease, transform .25s ease;
+}
+.service-card:hover{border-color:var(--gold); transform:translateY(-4px);}
+.service-num{font-family:var(--mono); font-size:12px; color:var(--gold); margin-bottom:18px; letter-spacing:.08em;}
+.service-card h3{font-size:19px; margin-bottom:10px;}
+.service-card p{font-size:14px; margin-bottom:16px;}
+.service-meta{display:flex; justify-content:space-between; font-size:12px; font-family:var(--mono); color:var(--slate); border-top:1px dashed var(--hairline); padding-top:14px;}
+
+/* ============================= SPECIALTIES ============================= */
+.specialty-belt{background:var(--navy-deep); padding:100px 0;}
+.specialty-belt .sectionhead h2, .specialty-belt .sectionhead p{color:var(--white);}
+.specialty-belt .sectionhead p{color:rgba(255,255,255,.6);}
+.chip-grid{display:flex; flex-wrap:wrap; gap:12px;}
+.chip{
+  border:1px solid rgba(255,255,255,0.16); color:rgba(255,255,255,.85);
+  border-radius:999px; padding:11px 20px; font-size:13.5px; font-weight:600;
+  transition:border-color .25s ease, background .25s ease, color .25s ease;
+}
+.chip:hover{border-color:var(--gold); background:rgba(201,162,39,0.08); color:var(--gold-light);}
+
+/* ============================= DOCTORS ============================= */
+.doctor-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+.doctor-card{background:var(--white); border:1px solid var(--hairline); border-radius:var(--radius); padding:26px 22px; text-align:left;}
+.avatar{width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:var(--display); font-weight:600; font-size:19px; color:var(--white); margin-bottom:16px;}
+.doctor-card h4{font-size:15.5px; color:var(--navy); margin-bottom:3px;}
+.doctor-card .dept{font-size:12px; color:var(--gold); font-weight:700; margin-bottom:10px;}
+.doctor-card .meta{font-size:12px; color:var(--slate); line-height:1.6;}
+.doctor-card .meta b{color:var(--ink);}
+
+/* ============================= INSURANCE ============================= */
+.insurance-panel{
+  background:var(--white); border:1px solid var(--hairline); border-radius:20px;
+  padding:44px; display:grid; grid-template-columns:.85fr 1.15fr; gap:44px; align-items:center;
+}
+.insurance-list{display:flex; flex-wrap:wrap; gap:10px;}
+.insurance-list span{
+  font-size:12.5px; font-weight:600; color:var(--navy); background:var(--cream);
+  border:1px solid var(--hairline); padding:9px 14px; border-radius:10px;
+}
+
+/* ============================= VOICE AGENT ============================= */
+.voice-section{background:linear-gradient(180deg, var(--navy-deep), var(--navy)); color:var(--white); padding:130px 0;}
+.voice-grid{display:grid; grid-template-columns:.95fr 1.05fr; gap:60px; align-items:center;}
+.voice-grid .sectionhead p{color:rgba(255,255,255,.65);}
+.voice-grid .sectionhead h2{color:var(--white);}
+.voice-feat{display:flex; gap:14px; margin-bottom:16px; align-items:flex-start;}
+.voice-feat .dot{width:7px; height:7px; border-radius:50%; background:var(--gold); margin-top:8px; flex:none;}
+.voice-feat p{color:rgba(255,255,255,.68); font-size:14px; margin:0;}
+.voice-feat b{color:var(--white);}
+
+.voice-console{
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.14);
+  border-radius:24px; padding:34px; backdrop-filter:blur(6px);
+}
+.voice-console .tag{font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--gold-light); text-transform:uppercase; margin-bottom:6px;}
+.voice-console h3{color:var(--white); font-size:20px; margin-bottom:22px;}
+.voice-hint{font-size:11.5px; color:rgba(255,255,255,.4); margin-top:14px; text-align:center;}
+
+/* ============================= CONTACT ============================= */
+.contact-panel{display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:20px; overflow:hidden; border:1px solid var(--hairline);}
+.contact-info{background:var(--white); padding:52px;}
+.contact-map{
+  background:
+    linear-gradient(rgba(11,37,69,0.88), rgba(11,37,69,0.88)),
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,.05) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,.05) 40px);
+  padding:52px; color:var(--white); display:flex; flex-direction:column; justify-content:center; position:relative;
+}
+.pin{width:38px; height:38px; margin-bottom:18px;}
+.contact-row{display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--hairline);}
+.contact-row:last-child{border-bottom:none;}
+.contact-row .ic{width:20px; height:20px; flex:none; margin-top:2px; color:var(--gold);}
+.contact-row b{display:block; font-size:14px; color:var(--navy); margin-bottom:3px;}
+.contact-row span{font-size:13.5px; color:var(--slate);}
+
+/* ============================= FOOTER ============================= */
+footer{background:var(--navy-deep); color:rgba(255,255,255,.55); padding:60px 0 30px;}
+.footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.08);}
+.footer-brand .brand-text{color:var(--white);}
+.footer-grid p{color:rgba(255,255,255,.5); font-size:13.5px; margin-top:14px; max-width:280px;}
+.footer-col h5{font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-light); margin-bottom:16px;}
+.footer-col a{display:block; font-size:13.5px; margin-bottom:11px; color:rgba(255,255,255,.6);}
+.footer-col a:hover{color:var(--white);}
+.footer-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:24px; font-size:12px; flex-wrap:wrap; gap:10px;}
+.disclaimer{
+  max-width:var(--maxw); margin:0 auto; padding:0 28px 30px; font-size:11.5px; color:rgba(255,255,255,.35); line-height:1.6;
+}
+
+/* ============================= CHATBOT WIDGET ============================= */
+.chat-launcher{
+  position:fixed; right:26px; bottom:26px; z-index:900;
+  width:62px; height:62px; border-radius:50%; border:none; cursor:pointer;
+  background:var(--navy); color:var(--gold-light);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 16px 34px -10px rgba(11,37,69,.55);
+  transition:transform .25s ease;
+}
+.chat-launcher:hover{transform:scale(1.06);}
+.chat-launcher svg{width:26px; height:26px;}
+.chat-launcher .ring{position:absolute; inset:-6px; border-radius:50%; border:1.5px solid rgba(201,162,39,.5); animation:ringpulse 2.4s ease-out infinite;}
+@keyframes ringpulse{0%{transform:scale(.9); opacity:.8;} 100%{transform:scale(1.35); opacity:0;}}
+.chat-dot{position:absolute; top:2px; right:2px; width:13px; height:13px; border-radius:50%; background:var(--red); border:2px solid var(--cream); font-size:0;}
+
+/* ============================= TALK TO ARIA BUTTON ============================= */
+.talk-btn{
+  position:fixed; right:26px; bottom:100px; z-index:900;
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 22px; border-radius:999px; border:none; cursor:pointer;
+  background:linear-gradient(135deg, var(--gold), #a8861a);
+  color:var(--navy-deep); font-family:var(--body); font-weight:700; font-size:14.5px;
+  box-shadow:0 16px 34px -10px rgba(201,162,39,.6);
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+}
+.talk-btn:hover{transform:translateY(-2px) scale(1.03); box-shadow:0 20px 40px -12px rgba(201,162,39,.75);}
+.talk-btn svg{width:20px; height:20px;}
+.talk-btn.calling{background:linear-gradient(135deg, #B3261E, #8a1a14); color:var(--white); animation:talkpulse 1.4s ease-in-out infinite;}
+@keyframes talkpulse{0%,100%{box-shadow:0 0 0 0 rgba(179,38,30,.5), 0 16px 34px -10px rgba(179,38,30,.6);} 50%{box-shadow:0 0 0 18px rgba(179,38,30,0), 0 16px 34px -10px rgba(179,38,30,.6);}}
+
+.chat-panel{
+  position:fixed; right:26px; bottom:100px; z-index:901;
+  width:368px; max-width:calc(100vw - 40px); height:520px; max-height:70vh;
+  background:var(--white); border-radius:20px; overflow:hidden;
+  box-shadow:0 30px 70px -20px rgba(11,37,69,.45);
+  display:flex; flex-direction:column;
+  transform:translateY(16px) scale(.97); opacity:0; pointer-events:none;
+  transition:transform .28s ease, opacity .28s ease;
+}
+.chat-panel.open{transform:translateY(0) scale(1); opacity:1; pointer-events:auto;}
+.chat-head{background:var(--navy); color:var(--white); padding:18px 20px; display:flex; align-items:center; gap:12px;}
+.chat-head .mark{width:30px; height:30px;}
+.chat-head .ti{flex:1;}
+.chat-head .ti b{display:block; font-size:14.5px; font-family:var(--body); font-weight:700;}
+.chat-head .ti span{font-size:11.5px; color:#8fdca6; display:flex; align-items:center; gap:5px;}
+.chat-head .ti span::before{content:""; width:6px; height:6px; border-radius:50%; background:#3fd67a; display:inline-block;}
+.chat-close{background:none; border:none; color:rgba(255,255,255,.7); cursor:pointer; width:28px; height:28px;}
+.chat-body{flex:1; overflow-y:auto; padding:18px 16px; background:var(--cream); display:flex; flex-direction:column; gap:12px;}
+.msg{max-width:82%; font-size:13.5px; line-height:1.5; padding:11px 14px; border-radius:14px;}
+.msg.bot{background:var(--white); color:var(--ink); align-self:flex-start; border-bottom-left-radius:4px; box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.msg.user{background:var(--navy); color:var(--white); align-self:flex-end; border-bottom-right-radius:4px;}
+.msg-time{font-size:10px; color:var(--slate); opacity:.55; margin-top:3px; align-self:flex-end;}
+.msg.bot ~ .msg-time{align-self:flex-start;}
+.typing{align-self:flex-start; display:flex; gap:4px; background:var(--white); padding:12px 15px; border-radius:14px; border-bottom-left-radius:4px; box-shadow:0 2px 8px rgba(0,0,0,.05);}
+.typing span{width:6px; height:6px; border-radius:50%; background:var(--slate); opacity:.5; animation:typingbounce 1.1s ease-in-out infinite;}
+.typing span:nth-child(2){animation-delay:.15s;} .typing span:nth-child(3){animation-delay:.3s;}
+@keyframes typingbounce{0%,60%,100%{transform:translateY(0); opacity:.4;} 30%{transform:translateY(-4px); opacity:1;}}
+.chat-input.disabled input{opacity:.6;}
+.chips-row{display:flex; flex-wrap:wrap; gap:8px; padding:0 16px 12px; background:var(--cream);}
+.qchip{font-size:11.5px; font-weight:600; color:var(--navy); background:var(--white); border:1px solid var(--hairline); padding:7px 12px; border-radius:999px; cursor:pointer;}
+.qchip:hover{border-color:var(--gold);}
+.chat-input{display:flex; align-items:center; gap:10px; padding:14px; border-top:1px solid var(--hairline); background:var(--white);}
+.chat-input input{flex:1; border:1px solid var(--hairline); border-radius:999px; padding:11px 16px; font-size:13.5px; font-family:var(--body); outline:none;}
+.chat-input input:focus{border-color:var(--gold);}
+.chat-send{width:38px; height:38px; border-radius:50%; background:var(--gold); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; flex:none;}
+.chat-send svg{width:16px; height:16px; color:var(--navy-deep);}
+
+/* ============================= RESPONSIVE ============================= */
+@media (max-width:980px){
+  .navlinks{position:fixed; top:0; right:0; height:100vh; height:100dvh; width:min(82vw, 340px);
+    background:var(--navy-deep); flex-direction:column; align-items:flex-start; justify-content:flex-start;
+    padding:calc(96px + env(safe-area-inset-top)) 30px 36px; gap:24px; transform:translateX(100%);
+    transition:transform .35s ease; z-index:502; box-shadow:-24px 0 50px rgba(0,0,0,.24); visibility:hidden;}
+  .navlinks.open{transform:translateX(0); visibility:visible;}
+  .navlinks a{font-size:16px; width:100%;}
+  .nav-phone{display:none;}
+  .hamburger{display:flex; position:relative; z-index:503;}
+  .hamburger span{transition:transform .25s ease, opacity .2s ease;}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nav-scrim.open{display:block; z-index:501;}
+  body.menu-open{overflow:hidden;}
+  .hero-grid{grid-template-columns:1fr;}
+  .pulse-wrap{height:280px;}
+  .quick-grid{grid-template-columns:repeat(2,1fr);}
+  .stats-grid{grid-template-columns:repeat(3,1fr); row-gap:26px;}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .doctor-grid{grid-template-columns:repeat(2,1fr);}
+  .insurance-panel{grid-template-columns:1fr;}
+  .voice-grid{grid-template-columns:1fr;}
+  .contact-panel{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:720px){
+  .wrap{padding-left:20px; padding-right:20px;}
+  header, header.scrolled{padding:13px 0; background:rgba(7,26,51,.96);}
+  .nav{gap:12px;}
+  .nav-cta{gap:8px;}
+  .nav-cta > .btn{display:none;}
+  .hero{min-height:auto; padding:118px 0 98px;}
+  .hero h1{font-size:clamp(36px, 11vw, 52px);}
+  .hero p.lead{font-size:15.5px;}
+  .hero-actions{margin-bottom:40px;}
+  .pulse-wrap{height:230px;}
+  .quick{margin-top:-48px;}
+  .quick-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .services-grid{grid-template-columns:1fr;}
+  .doctor-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .chat-panel{right:14px; left:14px; width:auto; bottom:92px;}
+  .chat-launcher{right:16px; bottom:16px;}
+  .talk-btn{right:16px; bottom:88px; padding:12px 18px; font-size:13.5px;}
+}
+@media (max-width:420px){
+  .brand{gap:8px; min-width:0;}
+  .brand .mark{width:30px; height:30px;}
+  .brand-text{font-size:16px;}
+  .brand-text small{font-size:7px; letter-spacing:.11em;}
+  .hero-actions .btn{width:100%;}
+  .hero-note{gap:16px;}
+  .chat-panel{top:calc(12px + env(safe-area-inset-top)); bottom:calc(84px + env(safe-area-inset-bottom)); max-height:none; height:auto;}
+  .chat-launcher{bottom:calc(16px + env(safe-area-inset-bottom));}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     LOGO / EMBLEM (reused inline SVG symbol)
+========================================================= -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="cross-mark" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="3"/>
+    <rect x="42" y="24" width="16" height="52" rx="3" fill="currentColor"/>
+    <rect x="24" y="42" width="52" height="16" rx="3" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header id="siteHeader">
+  <div class="wrap nav">
+    <a href="#home" class="brand">
+      <svg class="mark" style="color:var(--gold)"><use href="#cross-mark"/></svg>
+      <span class="brand-text">HOLY HEALTH<small>MULTI-SPECIALTY HOSPITAL</small></span>
+    </a>
+    <button class="nav-scrim" id="navScrim" aria-label="Close menu" tabindex="-1"></button>
+    <nav class="navlinks" id="navLinks">
+      <a href="#services">Care Services</a>
+      <a href="#specialties">Specialties</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#insurance">Insurance</a>
+      <a href="#voice">Voice Assistant</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="nav-phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (916) 555-4200
+      </div>
+      <a href="#contact" class="btn btn-gold">Book Appointment</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Sacramento, California</div>
+      <h1>Compassionate care,<br>at a <em>five-star</em> standard.</h1>
+      <p class="lead">Holy Health is a 450-bed multi-specialty hospital bringing advanced medicine — robotic surgery, transplant care, cardiac and cancer programs — together with the warmth of hospitality done right.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold">Book an Appointment</a>
+        <a href="#emergency" class="btn btn-outline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+          24×7 Emergency: 911
+        </a>
+      </div>
+      <div class="hero-note">
+        <div><b>450</b>Licensed Beds</div>
+        <div><b>24</b>Specialty Programs</div>
+        <div><b>180+</b>Consultants</div>
+        <div><b>24×7</b>Trauma Center</div>
+      </div>
+    </div>
+    <div class="pulse-wrap">
+      <div class="pulse-card">
+        <svg viewBox="0 0 480 420" preserveAspectRatio="none">
+          <path class="pulse-line" d="M0 230 L70 230 L95 150 L120 300 L150 60 L178 360 L205 230 L260 230 L285 190 L310 230 L480 230"/>
+        </svg>
+        <div class="pulse-dot"></div>
+        <div class="pulse-caption">LIVE VITALS &nbsp;<b>72 BPM</b>&nbsp; · &nbsp;Sacramento, CA Campus</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap quick reveal">
+    <div class="quick-grid">
+      <div class="quick-card">
+        <svg class="qicon" viewBox="0 0 24 24" fill="none" stroke="#0B2545" stroke-width="1.6"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/></svg>
+        <h4>Outpatient (OPD)</h4>
+        <p>Walk-in & scheduled consultations, 7 days a week across 24 specialties.</p>
+        <a class="link" href="#services">Consultation hours →</a>
+      </div>
+      <div class="quick-card">
+        <svg class="qicon" viewBox="0 0 24 24" fill="none" stroke="#0B2545" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v6"/></svg>
+        <h4>Inpatient (IPD)</h4>
+        <p>From semi-private rooms to presidential suites, with 1:1 critical-care nursing.</p>
+        <a class="link" href="#services">Room categories →</a>
+      </div>
+      <div class="quick-card">
+        <svg class="qicon" viewBox="0 0 24 24" fill="none" stroke="#0B2545" stroke-width="1.6"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>
+        <h4>Ambulance</h4>
+        <p>GPS-tracked BLS & ALS fleet, dispatched across the Sacramento metro area.</p>
+        <a class="link" href="#services">Request a transfer →</a>
+      </div>
+      <div class="quick-card emergency" id="emergency">
+        <svg class="qicon" viewBox="0 0 24 24" fill="none" stroke="#E8D9A0" stroke-width="1.6"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+        <h4>Emergency & Trauma</h4>
+        <p>Level-1 trauma center. In a life-threatening emergency, dial 911.</p>
+        <a class="link" href="tel:9165554911">Direct ER line →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div><b>450</b><span>Licensed Beds</span></div>
+    <div><b>96</b><span>Critical Care Beds</span></div>
+    <div><b>12</b><span>Operating Rooms</span></div>
+    <div><b>14</b><span>Ambulances</span></div>
+    <div><b>300+</b><span>Physicians</span></div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="sectionhead reveal">
+      <div class="eyebrow">Care Services</div>
+      <h2>Every stage of care, on one campus.</h2>
+      <p>From a same-week consultation to complex transplant surgery, Holy Health coordinates every step of treatment under one roof in Sacramento.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01 — OPD</div>
+        <h3>Outpatient Consultations</h3>
+        <p>General & specialty physician visits, tele-consultation, and same-day diagnostics.</p>
+        <div class="service-meta"><span>Mon–Sat, 8 AM–8 PM</span><span>$225+</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02 — IPD</div>
+        <h3>Inpatient Admission</h3>
+        <p>Semi-private to presidential suites, with a dedicated Patient Relationship Manager.</p>
+        <div class="service-meta"><span>Planned & emergency</span><span>From $1,450/day</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03 — Emergency</div>
+        <h3>Emergency & Trauma</h3>
+        <p>Level-1 trauma center with resuscitation bay and trauma OR on standby.</p>
+        <div class="service-meta"><span>Open 24×7×365</span><span>Dial 911</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04 — Transport</div>
+        <h3>Ambulance Fleet</h3>
+        <p>BLS, ALS and neonatal transport ambulances with GPS dispatch tracking.</p>
+        <div class="service-meta"><span>Metro Sacramento</span><span>From $950</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">05 — Imaging</div>
+        <h3>Diagnostics & Imaging</h3>
+        <p>3T MRI, 128-slice CT, PET-CT and a CLIA/CAP-standard in-house laboratory.</p>
+        <div class="service-meta"><span>Walk-in & referred</span><span>Same-day results</span></div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">06 — Surgery</div>
+        <h3>Robotic & Transplant Surgery</h3>
+        <p>da Vinci-class robotic platform, hybrid cath-OR, and a kidney/liver transplant program.</p>
+        <div class="service-meta"><span>By consultation</span><span>Estimate on request</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SPECIALTIES
+========================================================= -->
+<section class="specialty-belt" id="specialties">
+  <div class="wrap">
+    <div class="sectionhead reveal">
+      <div class="eyebrow">Centers of Excellence</div>
+      <h2>24 specialties, one coordinated team.</h2>
+      <p>Complex cases move seamlessly between departments through a shared tumor board, heart team, and transplant council.</p>
+    </div>
+    <div class="chip-grid reveal">
+      <span class="chip">Cardiac Sciences</span>
+      <span class="chip">Neurosciences</span>
+      <span class="chip">Oncology</span>
+      <span class="chip">Orthopedics & Joint Replacement</span>
+      <span class="chip">Nephrology & Urology</span>
+      <span class="chip">Gastroenterology</span>
+      <span class="chip">Women & Newborn Care</span>
+      <span class="chip">Pediatrics</span>
+      <span class="chip">Pulmonology & Critical Care</span>
+      <span class="chip">Endocrinology</span>
+      <span class="chip">Liver Transplant</span>
+      <span class="chip">ENT & Cochlear Implant</span>
+      <span class="chip">Ophthalmology</span>
+      <span class="chip">Dermatology</span>
+      <span class="chip">Dental & Maxillofacial</span>
+      <span class="chip">Psychiatry</span>
+      <span class="chip">Plastic & Reconstructive</span>
+      <span class="chip">Rehabilitation Medicine</span>
+      <span class="chip">Organ Transplant Program</span>
+      <span class="chip">Preventive Health</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     DOCTORS
+========================================================= -->
+<section class="pad" id="doctors">
+  <div class="wrap">
+    <div class="sectionhead reveal">
+      <div class="eyebrow">Our Physicians</div>
+      <h2>A sample of our consulting team.</h2>
+      <p>300+ physicians practice at Holy Health. A few consultants are shown below — the full, searchable directory with live availability lives on the patient portal.</p>
+    </div>
+    <div class="doctor-grid">
+      <div class="doctor-card reveal">
+        <div class="avatar" style="background:var(--navy)">JW</div>
+        <h4>Dr. James Whitfield</h4>
+        <div class="dept">Interventional Cardiology</div>
+        <div class="meta"><b>MD, FACC</b><br>Mon–Fri · 10 AM–1 PM</div>
+      </div>
+      <div class="doctor-card reveal">
+        <div class="avatar" style="background:var(--gold); color:var(--navy-deep)">SC</div>
+        <h4>Dr. Sarah Collins</h4>
+        <div class="dept">Neurosurgery</div>
+        <div class="meta"><b>MD, FAANS</b><br>Mon, Wed, Fri · 9 AM–12 PM</div>
+      </div>
+      <div class="doctor-card reveal">
+        <div class="avatar" style="background:var(--navy-light)">DM</div>
+        <h4>Dr. David Martinez</h4>
+        <div class="dept">Medical Oncology</div>
+        <div class="meta"><b>MD, FASCO</b><br>Mon–Sat · 10 AM–1 PM</div>
+      </div>
+      <div class="doctor-card reveal">
+        <div class="avatar" style="background:var(--gold); color:var(--navy-deep)">AR</div>
+        <h4>Dr. Amanda Reyes</h4>
+        <div class="dept">Obstetrics & Gynecology</div>
+        <div class="meta"><b>MD, FACOG</b><br>Mon–Sat · 10 AM–1 PM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     INSURANCE
+========================================================= -->
+<section class="pad" id="insurance" style="padding-top:0">
+  <div class="wrap">
+    <div class="insurance-panel reveal">
+      <div>
+        <div class="eyebrow">Billing & Coverage</div>
+        <h2 style="font-size:30px; margin:14px 0">In-network with the plans you already have.</h2>
+        <p style="font-size:14.5px; margin-bottom:20px">Our Insurance Desk verifies benefits and handles prior authorization directly with your plan — including Medicare and Medi-Cal.</p>
+        <a href="#contact" class="btn btn-navy">Talk to the Insurance Desk</a>
+      </div>
+      <div class="insurance-list">
+        <span>Blue Cross Blue Shield of CA</span>
+        <span>Anthem Blue Cross</span>
+        <span>Aetna</span>
+        <span>Cigna Healthcare</span>
+        <span>UnitedHealthcare</span>
+        <span>Kaiser Permanente</span>
+        <span>Health Net</span>
+        <span>Molina Healthcare</span>
+        <span>Humana</span>
+        <span>Blue Shield of California</span>
+        <span>Medicare</span>
+        <span>Medi-Cal</span>
+        <span>Covered California</span>
+        <span>TRICARE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     VOICE ASSISTANT  (powered by Aria — Retell AI)
+========================================================= -->
+<section class="voice-section" id="voice">
+  <div class="wrap voice-grid">
+    <div>
+      <div class="eyebrow">Voice Assistant · Aria</div>
+      <h2 class="reveal" onclick="startAriaCall()" style="cursor:pointer; border-bottom:2px dashed rgba(201,162,39,.4); display:inline-block; padding-bottom:4px" title="Click to talk to Aria">Ask Holy Health, out loud.</h2>
+      <p style="margin:16px 0 30px; font-size:15px; max-width:440px" class="reveal">Talk to Aria, our AI voice assistant — she answers questions about hours, doctors, insurance, room rates, and emergency care in real time. Click the heading above or the <b style="color:var(--gold-light)">Talk to Aria</b> button at the bottom of the screen to start.</p>
+      <div class="reveal">
+        <div class="voice-feat"><span class="dot"></span><p><b>Understands common questions</b><br>OPD hours, ambulance dispatch, insurance, doctor availability.</p></div>
+        <div class="voice-feat"><span class="dot"></span><p><b>Real conversation</b><br>Speak naturally — Aria listens and replies by voice in real time.</p></div>
+        <div class="voice-feat"><span class="dot"></span><p><b>Works in your browser</b><br>No app, no phone number, no waiting on hold.</p></div>
+      </div>
+    </div>
+
+    <div class="voice-console reveal">
+      <div class="tag">Powered by Aria</div>
+      <h3>Talk to Aria</h3>
+      <p style="color:rgba(255,255,255,.75); font-size:14.5px; line-height:1.65; margin-bottom:24px">
+        Aria is our AI voice assistant. Tap <b style="color:var(--gold-light)">Talk to Aria</b> at the bottom of the screen — or click the heading to the left — and Aria will answer in real time.
+      </p>
+      <div class="voice-feat"><span class="dot"></span><p><b>Instant answers</b><br>Hours, doctors, insurance, room rates, and directions.</p></div>
+      <div class="voice-feat"><span class="dot"></span><p><b>Real conversation</b><br>Speak naturally — Aria listens and replies by voice.</p></div>
+      <div class="voice-feat"><span class="dot"></span><p><b>Works in your browser</b><br>No app, no phone number, no waiting on hold.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+<section class="pad" id="contact">
+  <div class="wrap">
+    <div class="sectionhead reveal">
+      <div class="eyebrow">Visit or Call</div>
+      <h2>We're here around the clock.</h2>
+    </div>
+    <div class="contact-panel reveal">
+      <div class="contact-info">
+        <div class="contact-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Campus Address</b><span>4200 Wilshire Center Drive, Sacramento, CA 95825</span></div>
+        </div>
+        <div class="contact-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><b>Helpline</b><span>(916) 555-4200 &nbsp;·&nbsp; 7 AM–10 PM daily</span></div>
+        </div>
+        <div class="contact-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+          <div><b>24×7 Emergency</b><span>Dial 911 &nbsp;·&nbsp; ER Direct: (916) 555-4911</span></div>
+        </div>
+        <div class="contact-row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <div><b>Email</b><span>care@holyhealthhospital.com</span></div>
+        </div>
+      </div>
+      <div class="contact-map">
+        <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="#E8D9A0" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="eyebrow" style="color:var(--gold-light)">Sacramento, CA</div>
+        <h3 style="color:#fff; font-size:24px; margin:10px 0 8px">Holy Health Campus</h3>
+        <p style="color:rgba(255,255,255,.6); font-size:13.5px; max-width:320px">6-acre campus with valet parking, a dedicated helipad, and covered patient drop-off at every tower entrance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="brand">
+        <svg class="mark" style="color:var(--gold)"><use href="#cross-mark"/></svg>
+        <span class="brand-text">HOLY HEALTH</span>
+      </a>
+      <p>A 450-bed multi-specialty hospital in Sacramento, California — compassion, redefined.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Care</h5>
+      <a href="#services">Outpatient (OPD)</a>
+      <a href="#services">Inpatient (IPD)</a>
+      <a href="#emergency">Emergency</a>
+      <a href="#specialties">Specialties</a>
+    </div>
+    <div class="footer-col">
+      <h5>Patients</h5>
+      <a href="#doctors">Find a Doctor</a>
+      <a href="#insurance">Insurance</a>
+      <a href="#voice">Voice Assistant</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h5>Hospital</h5>
+      <a href="#home">About Holy Health</a>
+      <a href="#contact">Directions</a>
+      <a href="#contact">Careers</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Holy Health Multi-Specialty Hospital. All rights reserved.</span>
+    <span>Sacramento, California, USA</span>
+  </div>
+  <p class="disclaimer">Demo content: Holy Health, its address, staff names, and pricing are fictitious and built for template / demonstration purposes only. Not a real hospital. Do not use for medical, financial, or insurance decisions.</p>
+</footer>
+
+<!-- =========================================================
+     TALK TO ARIA BUTTON (fixed, above chat launcher)
+========================================================= -->
+<button class="talk-btn" onclick="startAriaCall()" aria-label="Start voice call with Aria">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+  Talk to Aria
+</button>
+
+<!-- =========================================================
+     CHATBOT WIDGET  (fully functional, rule-based)
+========================================================= -->
+<button class="chat-launcher" id="chatLauncher" aria-label="Open chat">
+  <span class="ring"></span>
+  <span class="chat-dot"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</button>
+
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Holy Health Assistant chat">
+  <div class="chat-head">
+    <svg class="mark" style="color:var(--gold-light)"><use href="#cross-mark"/></svg>
+    <div class="ti"><b>Holy Health Assistant</b><span>Online now</span></div>
+    <button class="chat-close" id="chatClose" aria-label="Close chat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="msg bot">Hi, I'm the Holy Health Assistant 👋 I can help with appointments, doctors, insurance, room rates, and directions. What do you need?</div>
+  </div>
+  <div class="chips-row">
+    <span class="qchip" data-q="Book an appointment">Book appointment</span>
+    <span class="qchip" data-q="OPD hours">OPD hours</span>
+    <span class="qchip" data-q="Find a doctor">Find a doctor</span>
+    <span class="qchip" data-q="Insurance">Insurance</span>
+    <span class="qchip" data-q="Emergency">Emergency</span>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Type a message…" autocomplete="off">
+    <button class="chat-send" id="chatSend" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   NAV: scroll shadow + mobile menu
+========================================================= */
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+});
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+const navScrim = document.getElementById('navScrim');
+function setMenu(open){
+  navLinks.classList.toggle('open', open);
+  navScrim.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+  hamburger.setAttribute('aria-expanded', String(open));
+  hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+hamburger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+navScrim.addEventListener('click', () => setMenu(false));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+window.addEventListener('resize', () => { if (window.innerWidth > 980) setMenu(false); });
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
+
+/* =========================================================
+   REVEAL ON SCROLL
+========================================================= */
+if ('IntersectionObserver' in window) {
+  document.documentElement.classList.add('reveal-ready');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.14 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+/* =========================================================
+   KNOWLEDGE BASE — shared by the chat widget
+========================================================= */
+const DOCTORS = [
+  { name: "Dr. James Whitfield", dept: "Interventional Cardiology", tags: ["cardiology","cardiologist","heart"], sched: "Mon–Fri, 10 AM–1 PM" },
+  { name: "Dr. Laura Bennett", dept: "Cardiac Surgery", tags: ["cardiac surgery","heart surgery"], sched: "Tue, Thu, Sat, 2–5 PM" },
+  { name: "Dr. Michael Chen", dept: "Neurology", tags: ["neurology","neurologist","brain"], sched: "Mon–Sat, 11 AM–2 PM" },
+  { name: "Dr. Sarah Collins", dept: "Neurosurgery", tags: ["neurosurgery","neurosurgeon"], sched: "Mon, Wed, Fri, 9 AM–12 PM" },
+  { name: "Dr. David Martinez", dept: "Medical Oncology", tags: ["oncology","cancer","oncologist"], sched: "Mon–Sat, 10 AM–1 PM" },
+  { name: "Dr. Rachel Foster", dept: "Surgical Oncology", tags: ["surgical oncology","tumor surgery"], sched: "Tue, Thu, 3–6 PM" },
+  { name: "Dr. Thomas Reilly", dept: "Orthopedics & Joint Replacement", tags: ["orthopedics","orthopedic","joint","knee","hip"], sched: "Mon–Sat, 9 AM–1 PM" },
+  { name: "Dr. Emily Carter", dept: "Nephrology & Transplant", tags: ["nephrology","kidney","dialysis"], sched: "Mon, Wed, Fri, 10 AM–1 PM" },
+  { name: "Dr. Robert Hayes", dept: "Urology", tags: ["urology","urologist"], sched: "Tue, Thu, Sat, 11 AM–2 PM" },
+  { name: "Dr. Jennifer Brooks", dept: "Gastroenterology", tags: ["gastroenterology","stomach","gi","digestive"], sched: "Mon–Fri, 2–5 PM" },
+  { name: "Dr. Daniel Okafor", dept: "GI & Bariatric Surgery", tags: ["bariatric","weight loss surgery"], sched: "Mon, Wed, Fri, 3–6 PM" },
+  { name: "Dr. Amanda Reyes", dept: "Obstetrics & Gynecology", tags: ["obstetrics","gynecology","obgyn","pregnancy"], sched: "Mon–Sat, 10 AM–1 PM" },
+  { name: "Dr. Christina Lopez", dept: "Reproductive Medicine (IVF)", tags: ["ivf","fertility","reproductive"], sched: "Tue, Thu, Sat, 11 AM–2 PM" },
+  { name: "Dr. Kevin Sullivan", dept: "Pediatrics & Neonatology", tags: ["pediatrics","pediatrician","children","newborn"], sched: "Mon–Sat, 9 AM–12 PM" },
+  { name: "Dr. Nicole Andersen", dept: "Pulmonology & Critical Care", tags: ["pulmonology","lungs","breathing"], sched: "Mon–Fri, 4–7 PM" },
+  { name: "Dr. Brian Coleman", dept: "Endocrinology", tags: ["endocrinology","diabetes","thyroid"], sched: "Tue, Thu, 10 AM–1 PM" },
+  { name: "Dr. Patricia Nguyen", dept: "ENT & Cochlear Implant Surgery", tags: ["ent","ear","nose","throat"], sched: "Mon, Wed, Fri, 2–5 PM" },
+  { name: "Dr. Steven Park", dept: "Ophthalmology", tags: ["ophthalmology","eye","cataract","lasik"], sched: "Mon–Sat, 9 AM–1 PM" },
+  { name: "Dr. Melissa Grant", dept: "Dermatology & Cosmetology", tags: ["dermatology","skin"], sched: "Mon–Sat, 11 AM–2 PM" },
+  { name: "Dr. Gregory Adams", dept: "Psychiatry", tags: ["psychiatry","mental health"], sched: "Mon, Wed, Fri, 3–6 PM" },
+];
+
+const DEPARTMENTS = ["Cardiology","Neurology","Oncology","Orthopedics","Nephrology & Urology","Gastroenterology",
+  "Obstetrics & Gynecology","Pediatrics","Pulmonology","Endocrinology","ENT","Ophthalmology","Dermatology","Psychiatry"];
+
+const KB = [
+  { k: ['opd hour','opd timing','opd open','general opd','clinic hour'], a: "OPD is open Monday–Saturday, 8 AM–8 PM, and Sunday 9 AM–2 PM. Specialty clinics run 9 AM–5 PM on a rotating doctor roster. Registration is $35 (one-time, valid 3 years)." },
+  { k: ['opd charge','opd cost','opd fee','consultation charge','consultation fee','how much is a visit'], a: "Self-pay OPD rates: General Physician $225 first visit / $140 follow-up. Specialist $385 / $220. Senior Consultant $550 / $310. Insured patients pay per their plan's benefits." },
+  { k: ['insurance','coverage','in-network','network','medicare','medi-cal','tricare','copay','deductible'], a: "We're in-network with Blue Cross Blue Shield, Anthem, Aetna, Cigna, UnitedHealthcare, Kaiser, Health Net, Molina, Humana, Medicare and Medi-Cal. Our Insurance Desk (Tower A, 1st floor, 8 AM–8 PM) verifies your specific benefits and handles prior authorization." },
+  { k: ['emergency','911','trauma','urgent','er ','the er'], a: "If this is a life-threatening emergency, call 911 right now. Our Level-1 trauma center and ER are open 24/7/365 — direct line (916) 555-4911. Average door-to-doctor time is under 5 minutes for critical cases." },
+  { k: ['ambulance'], a: "Our 14-vehicle GPS-tracked ambulance fleet covers metro Sacramento 24/7. Basic Life Support starts at $950 (+$28/mi past 7 mi), Advanced Life Support at $1,650 (+$38/mi). Dial 911 for an emergency dispatch, or (916) 555-4911 for a non-emergency transfer." },
+  { k: ['address','location','direction','where are you','campus'], a: "Holy Health is at 4200 Wilshire Center Drive, Sacramento, CA 95825 — free valet parking at every tower entrance, plus a helipad for air-ambulance transfers." },
+  { k: ['room rate','room price','room cost','ipd','private room','semi-private','suite','presidential','deluxe room'], a: "Inpatient rates per day: Semi-Private $1,450 · Private $2,600 · Deluxe $3,800 · Executive Suite $6,200 · Presidential Suite $11,500 · ICU/CCU $5,400. All include round-the-clock nursing." },
+  { k: ['admission','admit','how to get admitted'], a: "Planned admissions get pre-admission counseling, a cost estimate, and insurance pre-authorization. Emergency admissions transfer directly from the ER after stabilization. Every inpatient gets a dedicated Patient Relationship Manager." },
+  { k: ['visiting hour','visit hours','visiting time'], a: "General visiting hours: 11 AM–1 PM and 5 PM–7 PM. Private rooms & suites: 10 AM–8 PM (flexible). ICU/CCU/NICU/PICU: 12–12:30 PM and 6–6:30 PM, 2 visitors at a time." },
+  { k: ['specialt','department list','what departments','centers of excellence'], a: "24 specialties in all, including Cardiac Sciences, Neurosciences, Oncology, Orthopedics & Joint Replacement, Nephrology & Urology, Gastroenterology, Women & Newborn Care, Pediatrics, Pulmonology, Endocrinology, ENT, Ophthalmology, Dermatology, Psychiatry, Plastic & Reconstructive Surgery, and our Organ Transplant Program." },
+  { k: ['surgery cost','surgery price','procedure cost','procedure price','how much is surgery','knee replacement','hip replacement','bypass','angioplasty','cataract surgery'], a: "A few sample self-pay ranges: Cataract surgery $4,500–$8,500 · Knee replacement $55,000–$85,000 · Angioplasty $45,000–$75,000 · CABG $120,000–$200,000. Every patient gets a written Good Faith Estimate before a scheduled procedure." },
+  { k: ['amenit','five-star','wifi','food','meal','parking','butler','concierge'], a: "Five-star touches include valet parking, chef-prepared patient meals, family lounges, high-speed Wi-Fi, an on-site pharmacy & café, and butler service for Executive & Presidential Suite guests." },
+  { k: ['technology','robotic','mri','ct scan','pet-ct','da vinci','equipment'], a: "Our tech stack includes a 3-Tesla MRI, 128-slice CT, PET-CT, a da Vinci-class robotic surgical system, a hybrid cath-OR, and a LINAC for precision radiation therapy." },
+  { k: ['grievance','complaint','feedback','concern'], a: "You can reach our patient advocacy line anytime at grievance@holyhealthhospital.com — we respond within 72 hours." },
+  { k: ['discharge'], a: "Discharge is typically completed within 3–4 hours of the discharge order, with a full itemized bill and discharge summary provided." },
+  { k: ['contact','phone number','call you','helpline'], a: "Main helpline: (916) 555-4200 (7 AM–10 PM). 24×7 Emergency: (916) 555-4911. Email: care@holyhealthhospital.com." },
+  { k: ['thank'], a: "You're very welcome! Anything else I can help with?" },
+  { k: ['bye','goodbye','that\'s all','thats all'], a: "Take care! Reach us anytime at (916) 555-4200, or dial 911 for emergencies." },
+  { k: ['hello','hi ','hey','good morning','good afternoon'], a: "Hello! I can help with appointments, doctors, insurance, room rates, or directions. What do you need?" },
+  { k: ['help','what can you do','menu'], a: "I can help you: book an appointment, find a doctor by specialty, check OPD/IPD/ER pricing, verify insurance, look up visiting hours, or share directions. Just ask, or use the quick-reply buttons below." },
+];
+
+function scoreMatch(text, keywords){
+  const t = ' ' + text.toLowerCase() + ' ';
+  let score = 0;
+  for (const kw of keywords){ if (t.includes(kw.toLowerCase())) score += kw.length; }
+  return score;
+}
+function findDoctor(text){
+  const t = text.toLowerCase();
+  let best = null, bestScore = 0;
+  for (const doc of DOCTORS){
+    let score = 0;
+    if (t.includes(doc.name.toLowerCase().replace('dr. ', ''))) score += 50;
+    score += scoreMatch(t, doc.tags);
+    if (score > bestScore){ bestScore = score; best = doc; }
+  }
+  return { doc: best, score: bestScore };
+}
+function matchKB(text){
+  const { doc, score: docScore } = findDoctor(text);
+
+  let bestKB = null, bestKBScore = 0;
+  for (const item of KB){
+    const s = scoreMatch(text, item.k);
+    if (s > bestKBScore){ bestKBScore = s; bestKB = item; }
+  }
+
+  if (docScore === 0 && bestKBScore === 0){
+    return "I don't have a scripted answer for that one — try asking about appointments, a specific doctor or specialty, insurance, room rates, or emergency care. You can also call (916) 555-4200 to reach our team directly.";
+  }
+  if (docScore >= bestKBScore){
+    return `${doc.name} — ${doc.dept}. Office hours: ${doc.sched}. Book via the patient portal or call (916) 555-4200.`;
+  }
+  return bestKB.a;
+}
+
+/* =========================================================
+   IN-CHAT APPOINTMENT BOOKING FLOW
+========================================================= */
+let booking = null;
+
+function startBooking(){
+  booking = { step: 0 };
+  return "Great — let's get you booked. What's your full name? (Type \"cancel\" anytime to stop.)";
+}
+function handleBookingStep(text){
+  const t = text.trim();
+  if (/^cancel$/i.test(t)){ booking = null; return "No problem, booking canceled. Anything else I can help with?"; }
+
+  if (booking.step === 0){
+    booking.name = t;
+    booking.step = 1;
+    return `Thanks, ${t.split(' ')[0]}. Which department or specialty would you like to see? (e.g. ${DEPARTMENTS.slice(0,4).join(', ')}…)`;
+  }
+  if (booking.step === 1){
+    booking.dept = t;
+    booking.step = 2;
+    return "Got it. What day and time work best for you?";
+  }
+  if (booking.step === 2){
+    booking.when = t;
+    booking.step = 3;
+    return "Last thing — what's the best phone number to confirm the appointment?";
+  }
+  if (booking.step === 3){
+    booking.phone = t;
+    const summary = `You're all set, ${booking.name.split(' ')[0]}! Request summary — Department: ${booking.dept} · Preferred time: ${booking.when} · Contact: ${booking.phone}. Our scheduling team will call to confirm within 1 business day. For anything urgent, call (916) 555-4200.`;
+    booking = null;
+    return summary;
+  }
+}
+function isBookingIntent(text){
+  return /\b(book|schedule|appointment)\b/i.test(text);
+}
+
+/* =========================================================
+   CHATBOT WIDGET
+========================================================= */
+const chatLauncher = document.getElementById('chatLauncher');
+const chatPanel = document.getElementById('chatPanel');
+const chatClose = document.getElementById('chatClose');
+const chatBody = document.getElementById('chatBody');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+const chatInputRow = document.querySelector('.chat-input');
+
+chatLauncher.addEventListener('click', () => {
+  chatPanel.classList.toggle('open');
+  document.querySelector('.chat-dot').style.display = 'none';
+  if (chatPanel.classList.contains('open')) setTimeout(() => chatInput.focus(), 300);
+});
+chatClose.addEventListener('click', () => chatPanel.classList.remove('open'));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') chatPanel.classList.remove('open'); });
+
+function timeNow(){
+  return new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+}
+function addMsg(text, who){
+  const div = document.createElement('div');
+  div.className = 'msg ' + who;
+  div.textContent = text;
+  chatBody.appendChild(div);
+  const t = document.createElement('div');
+  t.className = 'msg-time';
+  t.style.alignSelf = who === 'user' ? 'flex-end' : 'flex-start';
+  t.textContent = timeNow();
+  chatBody.appendChild(t);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+function showTyping(){
+  const el = document.createElement('div');
+  el.className = 'typing';
+  el.id = 'typingIndicator';
+  el.innerHTML = '<span></span><span></span><span></span>';
+  chatBody.appendChild(el);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+function hideTyping(){
+  const el = document.getElementById('typingIndicator');
+  if (el) el.remove();
+}
+function respondBot(userText){
+  if (booking) return handleBookingStep(userText);
+  if (isBookingIntent(userText)) return startBooking();
+  return matchKB(userText);
+}
+function sendChat(text){
+  if (!text.trim() || chatInputRow.classList.contains('disabled')) return;
+  addMsg(text, 'user');
+  chatInput.value = '';
+  chatInputRow.classList.add('disabled');
+  chatInput.disabled = true;
+  showTyping();
+  const delay = 450 + Math.random() * 500;
+  setTimeout(() => {
+    hideTyping();
+    addMsg(respondBot(text), 'bot');
+    chatInputRow.classList.remove('disabled');
+    chatInput.disabled = false;
+    chatInput.focus();
+  }, delay);
+}
+chatSend.addEventListener('click', () => sendChat(chatInput.value));
+chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendChat(chatInput.value); });
+document.querySelectorAll('.qchip').forEach(chip => {
+  chip.addEventListener('click', () => sendChat(chip.dataset.q));
+});
+</script>
+
+<!-- =========================================================
+     ARIA — RETELL AI VOICE AGENT (Web SDK, button-triggered)
+========================================================= -->
+<script type="module">
+  import { RetellClient } from "https://esm.sh/retell-client-js-sdk@latest";
+
+  const retellClient = new RetellClient({
+    key: "key_33f675b81f60aecd42770f5a4072"
+  });
+
+  let activeCall = null;
+  let isCalling = false;
+
+  const TALK_LABEL_START = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>Talk to Aria';
+
+  const TALK_LABEL_END = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>End Call';
+
+  function setTalkButton(state) {
+    document.querySelectorAll('.talk-btn').forEach(b => {
+      if (state === "idle") {
+        b.classList.remove('calling');
+        b.innerHTML = TALK_LABEL_START;
+        b.setAttribute('aria-label', 'Start voice call with Aria');
+      } else {
+        b.classList.add('calling');
+        b.innerHTML = TALK_LABEL_END;
+        b.setAttribute('aria-label', 'End voice call with Aria');
+      }
+    });
+  }
+
+  function resetCall() {
+    activeCall = null;
+    isCalling = false;
+    setTalkButton("idle");
+  }
+
+  window.startAriaCall = function () {
+    if (isCalling) {
+      window.endAriaCall();
+      return;
+    }
+
+    isCalling = true;
+    setTalkButton("calling");
+
+    try {
+      activeCall = retellClient.createWebCall({
+        agent_id: "agent_0ccf14bfac744fb183f3194981",
+        hooks: {
+          onStatus: (status) => {
+            console.log("[Aria] status:", status);
+            if (status === "ended" || status === "error") {
+              resetCall();
+            }
+          },
+          onEnd: () => {
+            console.log("[Aria] call ended");
+            resetCall();
+          },
+          onError: (err) => {
+            console.error("[Aria] error:", err);
+            resetCall();
+          }
+        }
+      });
+    } catch (err) {
+      console.error("[Aria] failed to start call:", err);
+      resetCall();
+    }
+  };
+
+  window.endAriaCall = function () {
+    console.log("[Aria] ending call manually");
+    try {
+      if (activeCall && typeof activeCall.stop === "function") {
+        activeCall.stop();
+      } else if (activeCall && typeof activeCall.end === "function") {
+        activeCall.end();
+      } else if (activeCall && typeof activeCall.hangup === "function") {
+        activeCall.hangup();
+      } else if (retellClient && typeof retellClient.stopCall === "function") {
+        retellClient.stopCall();
+      }
+    } catch (err) {
+      console.error("[Aria] error while ending call:", err);
+    }
+    resetCall();
+  };
+</script>
